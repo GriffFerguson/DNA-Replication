@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DNA Replication</title>
     <link rel="stylesheet" href="/resources/style.css">
+    <link rel="stylesheet" href="/resources/intro.css">
 </head>
 <body>
     <div id="intro">
         <h1 id="gameTitle">DNA Replication</h1>
         <div id="introButtons">
-            <button type="button">Play</button>
-            <button type="button">Help</button>
+            <button type="button" id="playButton">Play</button>
+            <button type="button" id="introHelp">Help</button>
         </div>
     </div>
+    <div id="helpOverlay">
+
+    </div>
+    <script src="/scripts/help.js"></script>
     <script src="/scripts/intro.js"></script>
-    <script>loadIntro()</script>
+    <script>introEnter()</script>
 </body>
 </html>
