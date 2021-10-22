@@ -1,0 +1,34 @@
+:root {font-size:16px;}
+
+body {
+    margin:0;
+    padding:0;
+    background-color: rgb(86, 213, 245);
+}
+
+#gameTitle {
+    font-family:'GeoramaExpanded_Bold';
+    color:black;
+    font-size:3.75rem;
+    text-align: center;
+    position:absolute;
+    margin:0;
+    transform: translateY(-7rem);
+    width:100vw;
+    transition: transform 1.5s ease-out;
+}
+
+button {
+    background-color: rgb(126, 126, 126);
+    color:black;
+    border:4px solid black;
+    font-family: 'GeoramaExpanded_Bold';
+    padding:12px;
+    font-size: 1.5rem;
+    margin:0;
+}
+
+@font-face {
+    font-family: 'GeoramaExpanded_Bold';
+    src: url(./Georama_SemiExpanded-Bold.ttf);
+}
