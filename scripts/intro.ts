@@ -17,7 +17,7 @@ function introExit() {
     introElems.buttonWrapper.style.transform = 'translateY(110vh)'
 }
 
-introElems.buttons.help.addEventListener('click', function(e) {
+introElems.buttons.help.addEventListener('click', e => {
     introExit()
     showHelp('instructions')
 })

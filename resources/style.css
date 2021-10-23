@@ -11,6 +11,13 @@ h1 {
     font-family:'GeoramaExpanded_Bold';
     color:black;
     font-size:3.75rem;
+    margin:0.5rem;
+}
+
+p {
+    font-family: 'Georama';
+    font-size:1.2rem;
+    margin:0.25rem;
 }
 
 button {
