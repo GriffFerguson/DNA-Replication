@@ -2,7 +2,8 @@ var textAssets = null;
 var helpOverlay = document.getElementById('helpOverlay');
 var helpContent = document.getElementById('helpContent');
 fetch('/resources/textAssets.json')
-    .then(function (response) { textAssets = response.json(); });
+    .then(function (response) { return response.json(); })
+    .then(function (json) { textAssets = json; console.log(json); });
 function showHelp(message) {
     helpContent.innerHTML = textAssets[message];
     helpOverlay.style.display = 'block';

@@ -3,7 +3,8 @@ var helpOverlay = document.getElementById('helpOverlay')
 var helpContent = document.getElementById('helpContent')
 
 fetch('/resources/textAssets.json')
-.then(response => {textAssets = response.json()})
+.then(response => {return response.json()})
+.then(json => {textAssets = json; console.log(json)})
 
 function showHelp(message:string) {
     helpContent.innerHTML = textAssets[message]
