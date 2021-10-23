@@ -55,6 +55,13 @@ button:hover {
     transform: translateY(100vh);
     transition: transform 1.5s;
 }
+#exitHelp {
+    font-weight: bolder;
+    font-size: 3em;
+    position:absolute;
+    right:0.75em;
+    cursor: pointer;
+}
 
 @font-face {
     font-family: 'GeoramaExpanded_Bold';

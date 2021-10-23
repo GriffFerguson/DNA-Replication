@@ -1,12 +1,12 @@
 var textAssets = null;
 var helpOverlay = document.getElementById('helpOverlay')
+var helpContent = document.getElementById('helpContent')
 
 fetch('/resources/textAssets.json')
-.then(response => {return response.json()})
-.then(json => {textAssets = json; console.log(json)})
+.then(response => {textAssets = response.json()})
 
 function showHelp(message:string) {
-    helpOverlay.innerHTML = textAssets[message]
+    helpContent.innerHTML = textAssets[message]
     helpOverlay.style.display = 'block'
     setTimeout(() => {
         helpOverlay.style.transform = 'translateY(0)'
@@ -21,3 +21,7 @@ function hideHelp() {
         helpOverlay.style.display = 'none'
     }, 1510)
 }
+
+document.getElementById('exitHelp').addEventListener('click', e => {
+    hideHelp()
+})
