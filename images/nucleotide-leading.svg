@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="280" viewBox="0 0 250 240">
+   <style>
+      .phosphate {
+         fill: rgb(200,0,180);
+      }
+      .sugar {
+         fill: rgb(50,255,60);
+      }
+      .bond {
+         stroke: rgb(150,150,150);
+         stroke-width: 3;
+      }
+   </style>
+   <polygon class="phosphate" points="0,55 30,0 90,0 120,55 90,110 30,110" />
+   <path d="M103 85 L140 110" class="bond" />
+   <polygon transform="translate(110,80)" class="sugar" points="0,65 40,0 100,0 140,60 100,120 40,120" />   
+</svg>
