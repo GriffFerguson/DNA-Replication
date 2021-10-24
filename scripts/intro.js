@@ -17,6 +17,8 @@ function introExit() {
 }
 introElems.buttons.help.addEventListener('click', function (e) {
     introExit();
-    showHelp('instructions');
+    showHelp('instructions', 'intro');
+});
+introElems.buttons.play.addEventListener('click', function (e) {
 });
 //# sourceMappingURL=intro.js.map
