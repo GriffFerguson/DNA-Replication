@@ -1,0 +1,18 @@
+#game {
+   width:100vw;
+   height:100vh;
+   display:none;
+   opacity:0;
+   transition: opacity 800ms;
+}
+
+#timer {
+   font-size: 2rem;
+   position: absolute;
+   top:0.5vh;
+   left:0.5vw;
+   -ms-user-select: none;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+}

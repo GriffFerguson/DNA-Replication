@@ -20,5 +20,10 @@ introElems.buttons.help.addEventListener('click', function (e) {
     showHelp('instructions');
 });
 introElems.buttons.play.addEventListener('click', function (e) {
+    introExit();
+    setTimeout(function () {
+        sessionStorage.setItem('phase', 'game');
+        startGame();
+    }, 2240);
 });
 //# sourceMappingURL=intro.js.map

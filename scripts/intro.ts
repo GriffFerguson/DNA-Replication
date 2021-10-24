@@ -21,4 +21,11 @@ introElems.buttons.help.addEventListener('click', e => {
     introExit()
     showHelp('instructions')
 })
+
+introElems.buttons.play.addEventListener('click', e => {
+    introExit()
+    setTimeout(() => {
+        sessionStorage.setItem('phase', 'game')
+        startGame()
+    }, 2240)
 })
