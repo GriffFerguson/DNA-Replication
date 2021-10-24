@@ -17,7 +17,7 @@ function introExit() {
 }
 introElems.buttons.help.addEventListener('click', function (e) {
     introExit();
-    showHelp('instructions', 'intro');
+    showHelp('instructions');
 });
 introElems.buttons.play.addEventListener('click', function (e) {
 });

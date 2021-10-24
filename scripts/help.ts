@@ -1,14 +1,12 @@
 var textAssets = null;
 var helpOverlay = document.getElementById('helpOverlay')
 var helpContent = document.getElementById('helpContent')
-var phase = null;
 
 fetch('./resources/textAssets.json')
 .then(response => {return response.json()})
 .then(json => {textAssets = json; console.log(json)})
 
-function showHelp(message:string, _phase:string) {
-    phase = _phase
+function showHelp(message:string) {
     helpContent.innerHTML = textAssets[message]
     helpOverlay.style.display = 'block'
     setTimeout(() => {
@@ -17,7 +15,7 @@ function showHelp(message:string, _phase:string) {
 }
 
 function hideHelp() {
-    if (phase == 'intro') {
+    if (sessionStorage.getItem('phase') == 'intro') {
         introEnter()
     }
     window.scrollTo(0,0)
