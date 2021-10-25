@@ -54,6 +54,7 @@ button:hover {
     overflow-y: auto;
     transform: translateY(100vh);
     transition: transform 1.5s;
+    z-index: 999;
 }
 #exitHelp {
     font-weight: bolder;
