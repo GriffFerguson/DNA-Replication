@@ -17,9 +17,20 @@
    left:0.5vw;
 }
 
-.row {
+#gameHelp {
+   position: absolute;
+   top:1.4vh;
+   right:1.4vw;
+}
+
+#gameWrapper {
+   width:1400px;
+   height:100vh;
    display: grid;
-   grid-template-columns: 305px 40px 305px;
+   grid-template-columns: 650px 650px;
+   column-gap: 100px;
+   margin-left:260px;
+   margin-right:260px;
 }
 
 #helicase {
@@ -38,7 +49,6 @@
    grid-template-columns: 305px 40px 305px;
 }
 .row:not(:first-child) {margin-top: -145px;}
-.row .backbone:nth-child(2) {margin-top:105px;}
 
 .nucleotide {
    display: grid;
@@ -46,19 +56,17 @@
    column-gap: 5px;
 }
 
-.backbone {
-   width:150px;
-}
+.backbone {width:150px}
+.row .backbone:nth-child(2) {margin-top:105px;}
 
 .base {
-   background-repeat: no-repeat;
-   background-size: 150px 40px;
    margin-top:93px;
    width:150px;
    height:40px;
 }
-.lagging {transform: rotate(180deg)}
+.base:is(.lagging) {transform: rotate(180deg)}
 
 .bond {width: 40px;}
 .bond[src='./images/two-bond.svg'] {margin-top: 107px;}
 .bond[src='./images/three-bond.svg'] {margin-top: 101px;}
+
