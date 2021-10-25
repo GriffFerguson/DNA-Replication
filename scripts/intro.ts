@@ -19,7 +19,7 @@ function introExit() {
 
 introElems.buttons.help.addEventListener('click', e => {
     introExit()
-    showHelp('instructions')
+    showHelp()
 })
 
 introElems.buttons.play.addEventListener('click', e => {

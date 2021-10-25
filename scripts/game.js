@@ -6,7 +6,7 @@ var gameElems = {
     },
     strands: {
         leading: document.getElementsByClassName('leading')[0],
-        lagging: document.getElementsByClassName('lagging')[0]
+        lagging: document.getElementsByClassName('lagging')[0],
     }
 };
 function startGame() {
@@ -35,7 +35,7 @@ function createNucleotides(i) {
         left: {
             wrapper: document.createElement('div'),
             backbone: document.createElement('img'),
-            base: document.createElement('img')
+            base: document.createElement('img'),
         },
         bond: document.createElement('img'),
         right: {
@@ -48,7 +48,7 @@ function createNucleotides(i) {
         left: {
             wrapper: document.createElement('div'),
             backbone: document.createElement('img'),
-            base: document.createElement('img')
+            base: document.createElement('img'),
         },
         bond: document.createElement('img'),
         right: {
@@ -141,3 +141,4 @@ function generateBases() {
         return ['guanine', 'cytosine', 'three'];
     }
 }
+//# sourceMappingURL=game.js.map

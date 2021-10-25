@@ -1,13 +1,7 @@
 var textAssets = null;
 var helpOverlay = document.getElementById('helpOverlay')
-var helpContent = document.getElementById('helpContent')
 
-fetch('./resources/textAssets.json')
-.then(response => {return response.json()})
-.then(json => {textAssets = json; console.log(json)})
-
-function showHelp(message:string) {
-    helpContent.innerHTML = textAssets[message]
+function showHelp() {
     helpOverlay.style.display = 'block'
     setTimeout(() => {
         helpOverlay.style.transform = 'translateY(0)'
