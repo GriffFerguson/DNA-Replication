@@ -5,9 +5,16 @@ var gameElems = {
     strands: {
         leading: document.getElementsByClassName('leading')[0],
         lagging: document.getElementsByClassName('lagging')[0],
+    },
+    options: {
+        adenine: document.getElementsByClassName('option')[0],
+        cytosine: document.getElementsByClassName('option')[1],
+        guanine: document.getElementsByClassName('option')[2],
+        thymine: document.getElementsByClassName('option')[3]
     }
 };
 gameElems.help.addEventListener('click', function (e) { showHelp(); });
+var selectedBase = [1, 1]; // [<id>, <leading (1) or lagging (2)>]
 function startGame() {
     generateLevel();
     gameElems.wrapper.style.display = 'block';
@@ -19,9 +26,18 @@ function generateLevel() {
     for (var i = 1; i < 7; i++) {
         createNucleotides(i);
     }
-    playLevel(1);
+    selectBase();
 }
-function playLevel(i) {
+function selectBase() {
+    if (selectedBase[1] == 1) {
+        document.getElementById("leading_blank" + selectedBase[0]).setAttribute('src', './images/bases/selected.svg');
+        selectedBase[1]++;
+    }
+    else if (selectedBase[1] == 2) {
+        document.getElementById("lagging_blank" + selectedBase[0]).setAttribute('src', './images/bases/selected.svg');
+        selectedBase[0]++;
+        selectedBase[1]++;
+    }
 }
 function createNucleotides(i) {
     var row = {

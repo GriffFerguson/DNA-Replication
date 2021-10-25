@@ -34,9 +34,25 @@
 }
 
 #helicase {
-   margin-left:260px;
-   margin-right:260px;
+   margin-left:320px;
+   margin-right:200px;
    width:1400px;
+}
+
+#optionsMenu {
+   border: 5px solid black;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   gap:30px;
+   width:200px;
+   position: absolute;
+   top:12vh;
+   left:1vw;
+}
+.option {
+   cursor: pointer;
+   width:200px;
 }
 
 /* DNA Strands */
