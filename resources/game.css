@@ -16,3 +16,39 @@
    -webkit-user-select: none;
    user-select: none;
 }
+
+.row {
+   display: grid;
+   grid-template-columns: 305px 40px 305px;
+}
+.row:not(:first-of-type) {
+   margin-top: -145px;
+}
+.row .backbone:nth-child(2) {
+   margin-top:105px;
+}
+
+.nucleotide {
+   display: grid;
+   grid-template-columns: 150px 150px;
+   column-gap: 5px;
+}
+
+.backbone {
+   width:150px;
+}
+
+.base {
+   background-repeat: no-repeat;
+   background-size: 150px 40px;
+   margin-top:93px;
+   width:150px;
+   height:40px;
+}
+.lagging {
+   transform: rotate(180deg)
+}
+
+.bond {width: 40px;}
+.bond[src='./images/two-bond.svg'] {margin-top: 107px;}
+.bond[src='./images/three-bond.svg'] {margin-top: 101px;}
