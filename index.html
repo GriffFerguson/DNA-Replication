@@ -95,7 +95,7 @@
     <p id="message"></p>
     <div id="game">
         <p id="timer">0:30</p>
-        <p id="score">Score: 0</p>
+        <p id="score">Score: 0<br>High Score: 0</p>
         <button type="button" id="gameHelp">Help</button>
         <button type="button" id="go">GO!</button>
         <img id="helicase" src="./images/helicase.svg" alt="helicase">
@@ -132,6 +132,10 @@
     <script>
         introEnter();
         gameElems.wrapper.style.zoom = innerWidth / 1920
+
+        if (localStorage.getItem('highScore') == undefined || localStorage.getItem('highScore') == null) {
+            localStorage.setItem('highScore', '0')
+        }
     </script>
 </body>
 </html>

@@ -21,6 +21,7 @@ var selectedBase = [1, 1]; // [<id>, <leading (1) or lagging (2)>]
 function startGame() {
     generateLevel();
     gameElems.wrapper.style.display = 'block';
+    gameElems.score.innerText = "Score: 0\nHigh Score: " + localStorage.getItem('highScore');
     setTimeout(function () {
         gameElems.wrapper.style.opacity = '1';
         timer();
@@ -228,12 +229,15 @@ gameElems.go.addEventListener('click', function () {
     if (score[0] == 12) {
         levelCompleted = true;
         score[1]++;
-        gameElems.score.innerText = "Score: " + score[1];
         displayMessage('win');
         gameElems.wrapper.style.opacity = '0';
         timeRemaining = 30;
         selectedBase = [1, 1];
         score[0] = 0;
+        if (score[1] > parseInt(localStorage.getItem('highScore'), 10)) {
+            localStorage.setItem('highScore', score[1].toString());
+        }
+        gameElems.score.innerText = "Score: " + score[1] + "\nHigh Score: " + localStorage.getItem('highScore');
         setTimeout(function () {
             gameElems.strands.lagging.innerHTML = '';
             gameElems.strands.leading.innerHTML = '';
