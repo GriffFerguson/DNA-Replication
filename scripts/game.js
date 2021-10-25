@@ -1,14 +1,13 @@
 var gameElems = {
     wrapper: document.getElementById('game'),
     timer: document.getElementById('timer'),
-    helpButtons: {
-        help: document.getElementById('gameHelp')
-    },
+    help: document.getElementById('gameHelp'),
     strands: {
         leading: document.getElementsByClassName('leading')[0],
         lagging: document.getElementsByClassName('lagging')[0],
     }
 };
+gameElems.help.addEventListener('click', function (e) { showHelp(); });
 function startGame() {
     generateLevel();
     gameElems.wrapper.style.display = 'block';
