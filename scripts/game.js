@@ -30,7 +30,6 @@ function generateLevel() {
         createNucleotides(i);
     }
     selectBase();
-    timer();
 }
 function createNucleotides(i) {
     var row = {
@@ -235,9 +234,9 @@ gameElems.go.addEventListener('click', function () {
         }, 780);
         setTimeout(function () {
             gameElems.wrapper.style.opacity = '1';
+            timer();
         }, 1600);
         levelCompleted = false;
-        timer();
     }
 });
 function displayMessage(messageType) {

@@ -251,7 +251,6 @@ gameElems.go.addEventListener('click', () => {
          timer()
       }, 1600)
       levelCompleted = false;
-      timer();
    }
 })
 
