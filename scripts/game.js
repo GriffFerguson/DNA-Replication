@@ -185,7 +185,6 @@ gameElems.options.cytosine.addEventListener('click', function (e) { answer('cyto
 gameElems.options.guanine.addEventListener('click', function (e) { answer('guanine'); });
 gameElems.options.thymine.addEventListener('click', function (e) { answer('thymine'); });
 function answer(chosen) {
-    console.log(chosen);
     var compliment = document.getElementsByClassName('answer')[0].getAttribute('alt');
     var blank = document.getElementsByClassName('selected')[0];
     var answer;
@@ -201,7 +200,6 @@ function answer(chosen) {
     else if (compliment == 'thymine') {
         answer = 'adenine';
     }
-    console.log(answer);
     if (chosen == answer) {
         blank.setAttribute('src', "./images/bases/" + answer + ".svg");
         score[0]++;
