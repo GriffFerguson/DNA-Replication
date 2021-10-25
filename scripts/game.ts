@@ -29,7 +29,6 @@ function startGame() {
    }, 5)
 }
 
-
 // Create game
 function generateLevel() {
    for(var i = 1; i < 7; i++) {
