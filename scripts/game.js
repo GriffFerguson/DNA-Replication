@@ -22,22 +22,12 @@ function startGame() {
         gameElems.wrapper.style.opacity = '1';
     }, 5);
 }
+// Create game
 function generateLevel() {
     for (var i = 1; i < 7; i++) {
         createNucleotides(i);
     }
     selectBase();
-}
-function selectBase() {
-    if (selectedBase[1] == 1) {
-        document.getElementById("leading_blank" + selectedBase[0]).setAttribute('src', './images/bases/selected.svg');
-        selectedBase[1]++;
-    }
-    else if (selectedBase[1] == 2) {
-        document.getElementById("lagging_blank" + selectedBase[0]).setAttribute('src', './images/bases/selected.svg');
-        selectedBase[0]++;
-        selectedBase[1]++;
-    }
 }
 function createNucleotides(i) {
     var row = {
@@ -124,7 +114,7 @@ function createNucleotides(i) {
     lagging.left.backbone.classList.add('backbone');
     lagging.left.base.src = './images/bases/blank.svg';
     lagging.left.base.setAttribute('alt', 'blank');
-    lagging.left.base.setAttribute('id', "leading_blank" + i);
+    lagging.left.base.setAttribute('id', "lagging_blank" + i);
     lagging.left.base.classList.add('base');
     lagging.left.base.classList.add('leading');
     lagging.left.wrapper.appendChild(lagging.left.backbone);
@@ -154,6 +144,60 @@ function generateBases() {
     }
     else if (random == 3) {
         return ['guanine', 'cytosine', 'three'];
+    }
+}
+//Play game
+function selectBase() {
+    var blank;
+    var filled;
+    document.getElementsByClassName('selected')[0] != undefined ? document.getElementsByClassName('selected')[0].classList.remove('selected') : false;
+    document.getElementsByClassName('answer')[0] != undefined ? document.getElementsByClassName('answer')[0].classList.remove('answer') : false;
+    if (selectedBase[1] == 1) {
+        blank = document.getElementById("leading_blank" + selectedBase[0]);
+        filled = document.getElementById("leading_filled" + selectedBase[0]);
+        blank.setAttribute('src', './images/bases/selected.svg');
+        blank.classList.add('selected');
+        filled.classList.add('answer');
+        selectedBase[1] = 2;
+    }
+    else if (selectedBase[1] == 2) {
+        blank = document.getElementById("lagging_blank" + selectedBase[0]);
+        filled = document.getElementById("lagging_filled" + selectedBase[0]);
+        blank.setAttribute('src', './images/bases/selected.svg');
+        blank.classList.add('selected');
+        filled.classList.add('answer');
+        selectedBase[1] = 1;
+        selectedBase[0]++;
+    }
+}
+gameElems.options.adenine.addEventListener('click', function (e) { answer('adenine'); });
+gameElems.options.cytosine.addEventListener('click', function (e) { answer('cytosine'); });
+gameElems.options.guanine.addEventListener('click', function (e) { answer('guanine'); });
+gameElems.options.thymine.addEventListener('click', function (e) { answer('thymine'); });
+function answer(chosen) {
+    console.log(chosen);
+    var compliment = document.getElementsByClassName('answer')[0].getAttribute('alt');
+    var blank = document.getElementsByClassName('selected')[0];
+    var answer;
+    if (compliment == 'adenine') {
+        answer = 'thymine';
+    }
+    else if (compliment == 'cytosine') {
+        answer = 'guanine';
+    }
+    else if (compliment == 'guanine') {
+        answer = 'cytosine';
+    }
+    else if (compliment == 'thymine') {
+        answer = 'adenine';
+    }
+    console.log(answer);
+    if (chosen == answer) {
+        blank.setAttribute('src', "./images/bases/" + answer + ".svg");
+        selectBase();
+    }
+    else {
+        console.log('no');
     }
 }
 //# sourceMappingURL=game.js.map
