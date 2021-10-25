@@ -227,7 +227,7 @@ function answer(chosen: string) {
 }
 
 function timer() {
-   gameElems.timer.innerText = `0:${(timeRemaining - 1).toString()}`;
+   timeRemaining <= 9 ? gameElems.timer.innerText = `0:0${(timeRemaining).toString()}` : gameElems.timer.innerText = `0:${(timeRemaining).toString()}`;
    timeRemaining--;
    setTimeout(() => {
       if (timeRemaining == 0) {

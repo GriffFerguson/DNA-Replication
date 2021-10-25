@@ -12,4 +12,4 @@ Levels are entirely randomized with every page load. Therefore, the level 1 you 
 All graphics were made in SVG to ensure minimal bandwidth/storage usage and maximum resolution.<br>
 This is not compatible with internet explorer, and responsiveness is not compatible with Firefox.
 
-**Approximate total line count (excluding transpiled files and source maps): <ins>777</ins>**
+**Approximate total line count (excluding transpiled files and source maps): <ins>785</ins>**
