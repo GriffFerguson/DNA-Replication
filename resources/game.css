@@ -17,16 +17,23 @@
    left:0.5vw;
 }
 
+#score {
+   font-size:2rem;
+   position: absolute;
+   top:0.5vh;
+   right:0.5vw;
+}
+
 #gameHelp {
    position: absolute;
    bottom:1.4vh;
-   left:1.4vw;
+   right:1.4vw;
 }
 
 #go {
    position: absolute;
    bottom:1.4vh;
-   right:1.4vw;
+   left:1.4vw;
 }
 
 #gameWrapper {

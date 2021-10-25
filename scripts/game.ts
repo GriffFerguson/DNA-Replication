@@ -3,6 +3,7 @@ var gameElems = {
    timer: document.getElementById('timer'),
    help: document.getElementById('gameHelp'),
    go: document.getElementById('go'),
+   score: document.getElementById('score'),
    strands: {
       leading: document.getElementsByClassName('leading')[0],
       lagging: document.getElementsByClassName('lagging')[0],
@@ -24,6 +25,7 @@ function startGame() {
    gameElems.wrapper.style.display = 'block'
    setTimeout(() => {
       gameElems.wrapper.style.opacity = '1'
+      timer()
    }, 5)
 }
 
@@ -33,7 +35,9 @@ function generateLevel() {
    for(var i = 1; i < 7; i++) {
       createNucleotides(i)
    }
-   selectBase()
+   setTimeout(() => {
+      selectBase()
+   }, 10)
 }
 
 function createNucleotides(i: number) {
@@ -217,17 +221,18 @@ function answer(chosen: string) {
       score[0]++
       selectBase()
    } else {
-      console.log('no')
+      blank.setAttribute('src', `./images/bases/${chosen}.svg`)
+      displayMessage('lose')
    }
 }
 
 function timer() {
+   gameElems.timer.innerText = `0:${(timeRemaining - 1).toString()}`;
+   timeRemaining--;
    setTimeout(() => {
-      gameElems.timer.innerText = `0:${(timeRemaining - 1).toString()}`;
-      timeRemaining--;
-      if (timeRemaining == 0 || levelCompleted) {
+      if (timeRemaining == 0) {
          displayMessage('lose')
-      } else {
+      } else if (!levelCompleted) {
          timer()
       };
    }, 1000)
@@ -237,9 +242,12 @@ gameElems.go.addEventListener('click', () => {
    if (score[0] == 12) {
       levelCompleted = true;
       score[1]++;
+      gameElems.score.innerText = `Score: ${score[1]}`
       displayMessage('win')
       gameElems.wrapper.style.opacity = '0'
       timeRemaining = 30;
+      selectedBase = [1,1]
+      score[0] = 0;
       setTimeout(() => {
          gameElems.strands.lagging.innerHTML = ''
          gameElems.strands.leading.innerHTML = ''
@@ -249,20 +257,20 @@ gameElems.go.addEventListener('click', () => {
       setTimeout(() => {
          gameElems.wrapper.style.opacity = '1'
          timer()
-      }, 1600)
-      levelCompleted = false;
+         levelCompleted = false;
+      }, 2000)
    }
 })
 
 function displayMessage(messageType) {
    if (messageType == 'lose') {
-      gameElems.message.innerText = 'You lose!'
+      gameElems.message.innerText = 'Game over!'
       gameElems.message.style.color = 'rgb(255, 50, 50)'
       setTimeout(() => {
          window.location.reload()
       }, 3000)
    } else if (messageType == 'win') {
-      gameElems.message.innerText = 'You win!'
+      gameElems.message.innerText = 'Level complete!'
       gameElems.message.style.color = 'rgb(80, 255, 80)'
    }
    gameElems.message.style.transform = 'translateY(49vh)'
