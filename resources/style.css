@@ -56,6 +56,18 @@ button:hover {
     transition: transform 1.5s;
     z-index: 999;
 }
+.key {
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+}
+.keyItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:7px;
+}
+.keyItem img, .keyItem svg {width:120px;}
 #exitHelp {
     font-weight: bolder;
     font-size: 3em;

@@ -36,12 +36,67 @@
                     <li>Guanine compliments cytosine</li>
                 </ul>
             </p>
+            <h1>Key</h1>
+            <p><b>Bases:</b></p>
+            <div class="key">
+                <div class="keyItem">
+                    <img src="./images/bases/adenine.svg" alt="adenine">
+                    <p>Adenine</p>
+                </div>
+                <div class="keyItem">
+                    <img src="./images/bases/cytosine.svg" alt="cytosine">
+                    <p>Cytosine</p>
+                </div>
+                <div class="keyItem">
+                    <img src="./images/bases/guanine.svg" alt="guanine">
+                    <p>Guanine</p>
+                </div>
+                <div class="keyItem">
+                    <img src="./images/bases/thymine.svg" alt="thymine">
+                    <p>Thymine</p>
+                </div>
+            </div>
+            <p><br><b>Other components:</b></p>
+            <div class="key">
+                <div class="keyItem">
+                    <img src="./images/helicase.svg" alt="helicase">
+                    <p>Helicase</p>
+                </div>
+                <div class="keyItem">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 120 110">
+                        <polygon fill="rgb(200,0,180)" class="phosphate" points="0,55 30,0 90,0 120,55 90,110 30,110" />
+                    </svg>
+                    <p>Phosphate</p>
+                </div>
+                <div class="keyItem">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 140 120">
+                        <polygon fill="rgb(50,255,60)" class="sugar" points="0,60 40,0 100,0 140,60 100,120 40,120" /> 
+                    </svg>
+                    <p>Sugar</p>
+                </div>
+            </div>
+            <p><br><b>Game symbols:</b></p>
+            <div class="key">
+                <div class="keyItem">
+                    <img src="./images/bases/blank.svg" alt="blank base">
+                    <p>Blank base</p> 
+                </div>
+                <div class="keyItem">
+                    <img src="./images/bases/selected.svg" alt="selected base">
+                    <p>Selected base (this is what will be answered; bases are automatically selected)</p> 
+                </div>
+            </div>
         </div>
     </div>
     <div id="game">
         <p id="timer">0:30</p>
         <button type="button" id="gameHelp">Help</button>
         <img id="helicase" src="./images/helicase.svg" alt="helicase">
+        <div id="optionsMenu">
+            <div class="option">
+                <p></p>
+            </div>
+        </div>
         <div id="gameWrapper">
             <div class="strand leading"></div>
             <div class="strand lagging"></div>

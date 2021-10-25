@@ -11,7 +11,7 @@
          stroke-width: 3;
       }
    </style>
-   <polygon class="sugar" points="0,65 40,0 100,0 140,60 100,120 40,120" />   
+   <polygon class="sugar" points="0,60 40,0 100,0 140,60 100,120 40,120" />   
    <path d="M117 94 L140 110" class="bond" />
    <polygon transform="translate(120,90)" class="phosphate" points="0,55 30,0 90,0 120,55 90,110 30,110" />
 </svg>
