@@ -19,7 +19,13 @@
 
 #gameHelp {
    position: absolute;
-   top:1.4vh;
+   bottom:1.4vh;
+   left:1.4vw;
+}
+
+#go {
+   position: absolute;
+   bottom:1.4vh;
    right:1.4vw;
 }
 
@@ -53,6 +59,18 @@
 .option {
    cursor: pointer;
    width:200px;
+}
+
+#message {
+   font-weight: bold;
+   font-size:4rem;
+   text-align: center;
+   text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
+   width:100vw;
+   transition: transform 800ms cubic-bezier(0, 0.68, 0.54, 1.95);
+   position: absolute;
+   z-index: 989;
+   transform: translateY(110vh);
 }
 
 /* DNA Strands */

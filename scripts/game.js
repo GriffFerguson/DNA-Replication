@@ -2,6 +2,7 @@ var gameElems = {
     wrapper: document.getElementById('game'),
     timer: document.getElementById('timer'),
     help: document.getElementById('gameHelp'),
+    go: document.getElementById('go'),
     strands: {
         leading: document.getElementsByClassName('leading')[0],
         lagging: document.getElementsByClassName('lagging')[0],
@@ -11,7 +12,8 @@ var gameElems = {
         cytosine: document.getElementsByClassName('option')[1],
         guanine: document.getElementsByClassName('option')[2],
         thymine: document.getElementsByClassName('option')[3]
-    }
+    },
+    message: document.getElementById('message')
 };
 gameElems.help.addEventListener('click', function (e) { showHelp(); });
 var selectedBase = [1, 1]; // [<id>, <leading (1) or lagging (2)>]
@@ -28,6 +30,7 @@ function generateLevel() {
         createNucleotides(i);
     }
     selectBase();
+    timer();
 }
 function createNucleotides(i) {
     var row = {
@@ -147,6 +150,9 @@ function generateBases() {
     }
 }
 //Play game
+var score = [0, 0]; //[<level score>, <levels completed>]
+var timeRemaining = 30;
+var levelCompleted = false;
 function selectBase() {
     var blank;
     var filled;
@@ -194,10 +200,61 @@ function answer(chosen) {
     console.log(answer);
     if (chosen == answer) {
         blank.setAttribute('src', "./images/bases/" + answer + ".svg");
+        score[0]++;
         selectBase();
     }
     else {
         console.log('no');
     }
+}
+function timer() {
+    setTimeout(function () {
+        gameElems.timer.innerText = "0:" + (timeRemaining - 1).toString();
+        timeRemaining--;
+        if (timeRemaining == 0 || levelCompleted) {
+            displayMessage('lose');
+        }
+        else {
+            timer();
+        }
+        ;
+    }, 1000);
+}
+gameElems.go.addEventListener('click', function () {
+    if (score[0] == 12) {
+        levelCompleted = true;
+        score[1]++;
+        displayMessage('win');
+        gameElems.wrapper.style.opacity = '0';
+        timeRemaining = 30;
+        setTimeout(function () {
+            gameElems.strands.lagging.innerHTML = '';
+            gameElems.strands.leading.innerHTML = '';
+            generateLevel();
+            gameElems.timer.innerText = '0:30';
+        }, 780);
+        setTimeout(function () {
+            gameElems.wrapper.style.opacity = '1';
+        }, 1600);
+        levelCompleted = false;
+        timer();
+    }
+});
+function displayMessage(messageType) {
+    if (messageType == 'lose') {
+        gameElems.message.innerText = 'You lose!';
+        gameElems.message.style.color = 'rgb(255, 50, 50)';
+        setTimeout(function () {
+            window.location.reload();
+        }, 3000);
+    }
+    else if (messageType == 'win') {
+        gameElems.message.innerText = 'You win!';
+        gameElems.message.style.color = 'rgb(80, 255, 80)';
+    }
+    gameElems.message.style.transform = 'translateY(49vh)';
+    setTimeout(function () {
+        gameElems.message.style.transform = 'translateY(110vh)';
+    }, 2000);
 }
 //# sourceMappingURL=game.js.map
