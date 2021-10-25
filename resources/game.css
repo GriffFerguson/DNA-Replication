@@ -29,8 +29,8 @@
    display: grid;
    grid-template-columns: 650px 650px;
    column-gap: 100px;
-   margin-left:260px;
-   margin-right:260px;
+   margin-left:320px;
+   margin-right:200px;
 }
 
 #helicase {
@@ -49,6 +49,8 @@
    grid-template-columns: 305px 40px 305px;
 }
 .row:not(:first-child) {margin-top: -145px;}
+.strand:is(.lagging) .row:nth-child(4) {margin-top:-85px;}
+
 
 .nucleotide {
    display: grid;
@@ -70,3 +72,8 @@
 .bond[src='./images/two-bond.svg'] {margin-top: 107px;}
 .bond[src='./images/three-bond.svg'] {margin-top: 101px;}
 
+.ligase {
+   position: absolute;
+   transform: translate(750px, 300px);
+   width:650px;
+}
