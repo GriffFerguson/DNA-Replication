@@ -21,12 +21,24 @@
    display: grid;
    grid-template-columns: 305px 40px 305px;
 }
-.row:not(:first-of-type) {
-   margin-top: -145px;
+
+#helicase {
+   margin-left:260px;
+   margin-right:260px;
+   width:1400px;
 }
-.row .backbone:nth-child(2) {
-   margin-top:105px;
+
+/* DNA Strands */
+.strand {
+   display:flex;
+   flex-direction: column;
 }
+.row {
+   display: grid;
+   grid-template-columns: 305px 40px 305px;
+}
+.row:not(:first-child) {margin-top: -145px;}
+.row .backbone:nth-child(2) {margin-top:105px;}
 
 .nucleotide {
    display: grid;
@@ -45,9 +57,7 @@
    width:150px;
    height:40px;
 }
-.lagging {
-   transform: rotate(180deg)
-}
+.lagging {transform: rotate(180deg)}
 
 .bond {width: 40px;}
 .bond[src='./images/two-bond.svg'] {margin-top: 107px;}
