@@ -202,7 +202,6 @@ gameElems.options.guanine.addEventListener('click', e => {answer('guanine')})
 gameElems.options.thymine.addEventListener('click', e => {answer('thymine')})
 
 function answer(chosen: string) {
-   console.log(chosen)
    var compliment = document.getElementsByClassName('answer')[0].getAttribute('alt')
    var blank = document.getElementsByClassName('selected')[0]
    var answer: string;
@@ -215,7 +214,6 @@ function answer(chosen: string) {
    } else if (compliment == 'thymine') {
       answer = 'adenine'
    }
-   console.log(answer)
    if(chosen == answer) {
       blank.setAttribute('src', `./images/bases/${answer}.svg`)
       score[0]++
