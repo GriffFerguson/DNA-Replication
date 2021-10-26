@@ -13,8 +13,8 @@ function introEnter() {
     introElems.buttonWrapper.style.transform = 'translateY(50vh)'
 }
 function introExit() {
-    introElems.title.style.transform = 'translateY(-5rem)'
-    introElems.buttonWrapper.style.transform = 'translateY(110vh)'
+    introElems.title.style.transform = 'translateY(-10rem)'
+    introElems.buttonWrapper.style.transform = 'translateY(130vh)'
 }
 
 introElems.buttons.help.addEventListener('click', e => {
