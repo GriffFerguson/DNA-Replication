@@ -84,3 +84,11 @@ button:hover {
     font-family: 'Georama';
     src: url(./Georama-Regular.ttf);
 }
+
+@media only screen and (min-width:3840px) {
+    #helpOverlay h1 {font-size: 7.5rem;}
+    #helpOverlay p, #helpOverlay ul, #helpOverlay li {font-size: 2.4rem;}
+    #helpOverlay #exitHelp {font-size:6rem;}
+    #intro button {font-size:3rem;}
+    #intro h1 {font-size:6rem;}
+}
